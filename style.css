@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c3cbbe;
+}
+
+/* #app {
+  &[data-state="loading"] {
+    > .ui-loading {
+      display: block;
+    }
+  }
+} */
+
+.ui-loading {
+  height: 150px;
+  width: 300px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.load-square-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: fit-content;
+  height: fit-content;
+}
+
+.ui-screen-half {
+  height: 380px;
+  width: 300px;
+}
+
+.load-square {
+  width: 1em;
+  height: 1em;
+  background: black;
+  margin: 0.25em;
+  animation: load-square-move 2s ease-in-out infinite;
+}
+
+@keyframes load-square-move {
+  0% {
+    transform: translateX(-50vw);
+  }
+  50% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(50vw);
+  }
+}
